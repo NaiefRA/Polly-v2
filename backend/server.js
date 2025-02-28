@@ -1,0 +1,63 @@
+require("dotenv").config();
+const pollRoutes = require("./routes/polls");
+const express = require("express");
+const mongoose = require("mongoose");
+const Poll = require("./models/pollModel.js");
+
+// app
+const app = express();
+
+// middle ware
+app.use(express.json());
+
+app.use((req, res, next) => {
+  console.log(req.path, req.method);
+  next();
+});
+
+app.patch("/polls/:id", async (req, res) => {
+  const id = req.params.id;
+  const { optionValue } = req.body;
+  const ipAddress = req.socket.remoteAddress;
+  const poll = await Poll.findById(id);
+
+  try {
+    if (poll.votedIPAddresses.includes(ipAddress)) {
+      return res
+        .status(404)
+        .json({ error: "You have already voted in this poll" });
+    }
+
+    const update = await Poll.findOneAndUpdate(
+      { _id: id, "options.optionValue": optionValue },
+      {
+        $inc: { "options.$.optionVotes": 1 },
+        $push: { votedIPAddresses: ipAddress },
+      },
+      { new: true }
+    );
+
+    res.json(update);
+  } catch (err) {
+    res.status(400).json({ error: "Error" });
+  }
+});
+
+// routes
+
+app.use("/polls", pollRoutes);
+
+// connect to db
+
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => {
+    // listening
+    app.listen(process.env.PORT, () => {
+      console.log(`connected to db and listening on port ${process.env.PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.log(err);
+    process.exit(1);
+  });

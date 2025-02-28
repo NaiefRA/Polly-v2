@@ -1,0 +1,239 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+#navbar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: lightblue;
+  margin-bottom: 40px;
+}
+
+.navbar-element {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: black;
+}
+/* Page Title */
+.page-title {
+  font-size: 2rem;
+  color: #333;
+}
+
+/* Loading & Error Messages */
+#loading,
+#error {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #ff0000;
+}
+
+/* Options Container */
+#options-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Individual Option */
+#options {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f1f1f1;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+/* Option Button */
+#option-button {
+  padding: 8px 12px;
+  background-color: green;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#option-button:hover {
+  background-color: seagreen;
+}
+
+/* Option Votes */
+#option-votes {
+  font-size: 1rem;
+  color: #333;
+  font-weight: bold;
+}
+
+/* POLLS */
+
+.polls-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.poll-card {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  padding-bottom: 20px;
+}
+
+.poll-card a {
+  text-decoration: none;
+}
+
+.poll-card:hover {
+  transform: scale(1.05);
+  background-color: whitesmoke;
+}
+
+.poll-header {
+  border-bottom: 2px, solid, black;
+  padding-bottom: 10px;
+  padding-left: 20px;
+}
+
+.poll-title {
+  color: lightgreen;
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.poll-poller {
+  color: #1b5e20;
+  font-size: 0.75rem;
+  padding-bottom: 5px;
+}
+
+.poll-body {
+  margin-bottom: 15px;
+  color: #333;
+  font-style: italic;
+  padding-left: 20px;
+}
+
+.poll-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.poll-option {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 900;
+  color: black;
+}
+.option-button {
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px 8px;
+  border-radius: 8px;
+  background-color: aquamarine;
+  border: none;
+  transition: transform 0.3s ease;
+}
+.page-option:hover {
+  transform: scale(1.05);
+  background-color: aqua;
+  cursor: pointer;
+}
+
+/* Form Styling */
+
+#create-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#create-form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  max-width: 90%;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Labels */
+.create-label {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #2e7d32; /* Green Highlight */
+}
+
+/* Inputs & Textarea */
+.create-text,
+#create-body-textarea {
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #2e7d32; /* Green Border */
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/* Textarea Specific Styling */
+#create-body-textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Submit Button */
+#create-submit-button,
+#create-option-button {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #2e7d32; /* Green Button */
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#create-submit-button:hover,
+#create-option-button:hover {
+  background-color: #1b5e20; /* Darker Green Hover */
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+  #create-form {
+    width: 100%;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .polls-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .poll-card {
+    width: 90%;
+    max-width: 400px;
+  }
+}
