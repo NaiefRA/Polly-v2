@@ -1,9 +1,10 @@
 /* General Styles */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  background-color: rgb(32, 32, 32);
   margin: 0;
   padding: 0;
+  color: white;
 }
 
 #navbar {
@@ -12,19 +13,50 @@ body {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  background-color: lightblue;
-  margin-bottom: 40px;
+  background-color: rgb(47, 47, 47);
+  margin-bottom: 20px;
+}
+
+.sorting {
+  position: relative;
+}
+.sorting {
+  min-width: 350px;
+  display: flex;
+  justify-content: right;
+  margin: 30px;
+}
+.sorting label {
+  margin: 10px;
+}
+
+.sorting select {
+  appearance: none;
+  font-size: 1rem;
+  padding: 0.25em 4em 0.25em 0.75em;
+  background-color: grey;
+  border: none;
+  border-radius: 0.25rem;
+  color: #000;
+  cursor: pointer;
 }
 
 .navbar-element {
   text-decoration: none;
-  font-size: 1.5rem;
-  color: black;
+  font-size: 1rem;
+  color: white;
+}
+
+.navbar-element:hover {
+  color: rgb(79, 231, 79);
+}
+.page-title:hover {
+  color: rgb(79, 231, 79);
 }
 /* Page Title */
 .page-title {
-  font-size: 2rem;
-  color: #333;
+  font-size: 1.5rem;
+  color: white;
 }
 
 /* Loading & Error Messages */
@@ -48,7 +80,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  background: #f1f1f1;
+  background: white;
   padding: 8px 12px;
   border-radius: 5px;
 }
@@ -66,7 +98,7 @@ body {
 }
 
 #option-button:hover {
-  background-color: seagreen;
+  background-color: rgb(79, 231, 79);
 }
 
 /* Option Votes */
@@ -89,7 +121,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 300px;
-  background-color: white;
+  background-color: grey;
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
@@ -102,7 +134,7 @@ body {
 
 .poll-card:hover {
   transform: scale(1.05);
-  background-color: whitesmoke;
+  background-color: rgb(108, 108, 108);
 }
 
 .poll-header {
@@ -112,20 +144,20 @@ body {
 }
 
 .poll-title {
-  color: lightgreen;
+  color: rgb(79, 231, 79);
   font-size: 1.5rem;
   margin-bottom: 5px;
 }
 
 .poll-poller {
-  color: #1b5e20;
+  color: rgb(79, 231, 79);
   font-size: 0.75rem;
   padding-bottom: 5px;
 }
 
 .poll-body {
   margin-bottom: 15px;
-  color: #333;
+  color: white;
   font-style: italic;
   padding-left: 20px;
 }
@@ -139,14 +171,14 @@ body {
 .poll-option {
   font-family: "Courier New", Courier, monospace;
   font-weight: 900;
-  color: black;
+  color: white;
 }
 .option-button {
   margin-left: 10px;
   margin-right: 10px;
   padding: 10px 8px;
   border-radius: 8px;
-  background-color: aquamarine;
+  background-color: rgb(79, 231, 79);
   border: none;
   transition: transform 0.3s ease;
 }
@@ -202,7 +234,7 @@ body {
 /* Submit Button */
 #create-submit-button,
 #create-option-button {
-  margin-top: 15px;
+  margin-top: 40px;
   padding: 10px;
   background-color: #2e7d32; /* Green Button */
   border: none;

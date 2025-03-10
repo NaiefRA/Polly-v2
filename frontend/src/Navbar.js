@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <div id="navbar">
       <Link to="/" className="navbar-element">
-        <h2 className="page-title"> Welcome to Polly</h2>
+        <h2 className="page-title">Polly v2</h2>
       </Link>
       <Link to="/new-poll" className="navbar-element">
         Create Poll

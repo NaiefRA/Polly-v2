@@ -60,7 +60,7 @@ const PollPage = () => {
         setPoll(updatedPoll);
       })
       .catch((err) => {
-        console.error(err.message);
+        alert(err.message);
       });
   };
 
