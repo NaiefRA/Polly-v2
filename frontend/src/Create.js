@@ -36,7 +36,7 @@ const Create = () => {
       return;
     }
     const poll = { body, title, poller, options };
-    fetch("/polls", {
+    fetch("https://polly-v2.onrender.com/polls", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(poll),

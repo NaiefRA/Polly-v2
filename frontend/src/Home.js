@@ -2,7 +2,9 @@ import DisplayPolls from "./DisplayPolls";
 import useFetch from "./UseFetch";
 
 const Home = () => {
-  const { data, err, isPending } = useFetch("/polls/");
+  const { data, err, isPending } = useFetch(
+    "https://polly-v2.onrender.com/polls/"
+  );
 
   return (
     <div>

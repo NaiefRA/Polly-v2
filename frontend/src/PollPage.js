@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const PollPage = () => {
   const navigate = useNavigate();
   const { id } = useParams();
-  const link = "/polls/" + id;
+  const link = "https://polly-v2.onrender.com/polls/" + id;
 
   const [poll, setPoll] = useState();
   const [isPending, setIsPending] = useState(true);
@@ -29,7 +29,7 @@ const PollPage = () => {
 
   const handleDelete = (e) => {
     e.preventDefault();
-    fetch(`/polls/${poll._id}`, {
+    fetch(`https://polly-v2.onrender.com/polls/${poll._id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -43,7 +43,7 @@ const PollPage = () => {
   const handleClick = (e, option) => {
     e.preventDefault();
 
-    fetch(`/polls/${poll._id}`, {
+    fetch(`https://polly-v2.onrender.com/polls/${poll._id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ optionValue: option }),

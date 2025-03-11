@@ -1,5 +1,4 @@
 {
-  "proxy": "https://polly-v2.onrender.com",
   "name": "polly",
   "version": "0.1.0",
   "private": true,

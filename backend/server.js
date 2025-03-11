@@ -3,11 +3,19 @@ const pollRoutes = require("./routes/polls");
 const express = require("express");
 const mongoose = require("mongoose");
 const Poll = require("./models/pollModel.js");
+const cors = require("cors");
 
 // app
 const app = express();
 
 // middle ware
+app.use(
+  cors({
+    origin: "https://polly-v2.netlify.app/",
+    credentials: true,
+  })
+);
+
 app.use(express.json());
 
 app.use((req, res, next) => {
