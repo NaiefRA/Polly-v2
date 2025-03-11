@@ -10,7 +10,6 @@ const PollPage = () => {
 
   const [poll, setPoll] = useState();
   const [isPending, setIsPending] = useState(true);
-  const [err, setErr] = useState();
 
   useEffect(() => {
     fetch(link)
@@ -20,12 +19,9 @@ const PollPage = () => {
       .then((result) => {
         setPoll(result);
         setIsPending(false);
-        setErr(null);
       })
-      .catch((err) => {
-        setErr(err.message);
-      });
-  }, []);
+      .catch((err) => {});
+  }, [window.location.href]);
 
   const handleDelete = (e) => {
     e.preventDefault();

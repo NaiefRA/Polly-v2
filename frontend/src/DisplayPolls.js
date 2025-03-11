@@ -26,6 +26,8 @@ const DisplayPolls = ({ polls }) => {
           }, 0)
         );
       }
+
+      return 0;
     });
 
     setRenderedPolls(sortedPolls);
