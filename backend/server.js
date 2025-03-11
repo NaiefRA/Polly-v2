@@ -9,12 +9,7 @@ const cors = require("cors");
 const app = express();
 
 // middle ware
-app.use(
-  cors({
-    origin: "https://polly-v2.netlify.app/",
-    credentials: true,
-  })
-);
+app.use(cors());
 
 app.use(express.json());
 
