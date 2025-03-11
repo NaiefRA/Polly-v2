@@ -21,7 +21,9 @@ app.use((req, res, next) => {
 app.patch("/polls/:id", async (req, res) => {
   const id = req.params.id;
   const { optionValue } = req.body;
-  const ipAddress = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
+  const rawIpAddress =
+    req.headers["x-forwarded-for"] || req.socket.remoteAddress;
+  const ipAddress = rawIpAddress.split(",")[0].trim();
   const poll = await Poll.findById(id);
 
   try {
