@@ -269,3 +269,12 @@ body {
     max-width: 400px;
   }
 }
+
+.delete-poll {
+  padding: 10px;
+  display: flex;
+  background-color: rgb(79, 231, 79);
+  border-radius: 5px;
+  border: none;
+  margin: 50px;
+}
