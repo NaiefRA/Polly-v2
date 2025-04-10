@@ -18,7 +18,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.patch("polls/:id/admin", async (req, res) => {
+app.patch("/polls/:id/admin", async (req, res) => {
   const id = req.params.id;
   const { title, poller, options } = req.body;
   const poll = await Poll.findById(id);
