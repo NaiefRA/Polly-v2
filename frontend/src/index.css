@@ -59,6 +59,26 @@ body {
   color: white;
 }
 
+.option-val {
+  color: black;
+  padding: 5px;
+  margin: 5px;
+}
+
+.option-delete {
+  background-color: lightcoral;
+  padding: 5px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+}
+
+.option-delete:hover {
+  background-color: red;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
 /* Loading & Error Messages */
 #loading,
 #error {

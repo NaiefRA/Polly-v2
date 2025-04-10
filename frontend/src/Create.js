@@ -12,6 +12,16 @@ const Create = () => {
 
   const addOption = (e) => {
     e.preventDefault();
+    // console.log(options);
+    if (
+      options.some((option) => {
+        return option.optionValue == currentOption;
+      })
+    ) {
+      alert("No duplicate options");
+      console.log("chekc");
+      return;
+    }
 
     const newOption = { optionValue: currentOption, optionVotes: 0 };
 
@@ -80,8 +90,9 @@ const Create = () => {
           {options.map((option) => {
             return (
               <div>
-                <label>{option.optionValue}</label>
+                <label className="option-val">{option.optionValue}</label>
                 <button
+                  className="option-delete"
                   onClick={(e) => {
                     handleDelete(e, option.optionValue);
                   }}

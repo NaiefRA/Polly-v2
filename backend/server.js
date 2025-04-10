@@ -18,6 +18,24 @@ app.use((req, res, next) => {
   next();
 });
 
+app.patch("polls/:id/admin", async (req, res) => {
+  const id = req.params.id;
+  const { title, poller, options } = req.body;
+  const poll = await Poll.findById(id);
+
+  try {
+    const update = await Poll.findOneAndUpdate(
+      { _id: id },
+      { title, poller, options },
+      { new: true }
+    );
+
+    res.json(update);
+  } catch (err) {
+    res.status(400).json({ error: "Error" });
+  }
+});
+
 app.patch("/polls/:id", async (req, res) => {
   const id = req.params.id;
   const { optionValue } = req.body;

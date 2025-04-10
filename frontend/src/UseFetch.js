@@ -8,6 +8,7 @@ const useFetch = (link) => {
   useEffect(() => {
     fetch(link)
       .then((result) => {
+        console.log("req sent");
         return result.json();
       })
       .then((result) => {

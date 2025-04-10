@@ -9,7 +9,7 @@ const Navbar = () => {
       <Link to="/new-poll" className="navbar-element">
         Create Poll
       </Link>
-      <Link to="/" className="navbar-element">
+      <Link to="/about" className="navbar-element">
         About
       </Link>
     </div>
