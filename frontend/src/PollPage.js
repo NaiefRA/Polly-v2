@@ -81,7 +81,7 @@ const PollPage = () => {
     const updatedOptions = valuesAdmin.map((value, i) => {
       return { optionValue: value, optionVotes: votesAdmin[i] };
     });
-    const updatedPoll = { title, poller, options: updatedOptions };
+    const updatedPoll = { ...poll, title, poller, options: updatedOptions };
     fetch(`https://polly-v2.onrender.com/polls/${poll._id}/admin`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
