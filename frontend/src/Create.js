@@ -7,7 +7,7 @@ const Create = () => {
   const [body, setBody] = useState("");
   const [options, setOptions] = useState([]);
   const [currentOption, setCurrentOption] = useState("");
-
+  const baseUrl = process.env.REACT_APP_API_BASE_URL;
   const navigate = useNavigate();
 
   const addOption = (e) => {
@@ -46,7 +46,7 @@ const Create = () => {
       return;
     }
     const poll = { body, title, poller, options };
-    fetch("https://polly-v2.onrender.com/polls", {
+    fetch(`${baseUrl}/polls`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(poll),

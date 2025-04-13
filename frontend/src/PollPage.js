@@ -5,9 +5,10 @@ import { useNavigate } from "react-router-dom";
 import DoughnutChart from "./DoughnutChart";
 
 const PollPage = () => {
+  const baseUrl = process.env.REACT_APP_API_BASE_URL;
   const navigate = useNavigate();
   const { id } = useParams();
-  const link = "https://polly-v2.onrender.com/polls/" + id;
+  const link = `${baseUrl}/polls/` + id;
 
   const [title, setTitle] = useState("");
   const [poller, setPoller] = useState("");
@@ -42,7 +43,7 @@ const PollPage = () => {
 
   const handleDelete = (e) => {
     e.preventDefault();
-    fetch(`https://polly-v2.onrender.com/polls/${poll._id}`, {
+    fetch(`${baseUrl}/polls/${poll._id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -56,7 +57,7 @@ const PollPage = () => {
   const handleClick = (e, option) => {
     e.preventDefault();
 
-    fetch(`https://polly-v2.onrender.com/polls/${poll._id}`, {
+    fetch(`${baseUrl}/polls/${poll._id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ optionValue: option }),
@@ -82,7 +83,7 @@ const PollPage = () => {
       return { optionValue: value, optionVotes: votesAdmin[i] };
     });
     const updatedPoll = { ...poll, title, poller, options: updatedOptions };
-    fetch(`https://polly-v2.onrender.com/polls/${poll._id}/admin`, {
+    fetch(`${baseUrl}/polls/${poll._id}/admin`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updatedPoll),

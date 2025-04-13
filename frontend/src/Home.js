@@ -2,9 +2,8 @@ import DisplayPolls from "./DisplayPolls";
 import useFetch from "./UseFetch";
 
 const Home = () => {
-  const { data, err, isPending } = useFetch(
-    "https://polly-v2.onrender.com/polls/"
-  );
+  const baseUrl = process.env.REACT_APP_API_BASE_URL;
+  const { data, err, isPending } = useFetch(`${baseUrl}/polls/`);
 
   return (
     <div>
